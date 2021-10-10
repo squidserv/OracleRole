@@ -38,17 +38,31 @@ TODO: All of them
 
 ## Weapon
 
+The weapon a bad player is holding
+
 ## Distance
+
+How far away a random enemy is
 
 ## Body
 
+A dead body that has not been investigated
+
 ## Outline
+
+Wallhacks while blind
 
 ## Role
 
+The specific role of one of the non-innocents
+
 ## Team
 
+If there is a member of a team alive
+
 ## Alive
+
+How many players are left
 
 ## Special Thanks:
 - [Noxx](https://steamcommunity.com/id/noxxflame) and [Malivil](https://steamcommunity.com/id/malivil) for all their work on Custom Roles for TTT
