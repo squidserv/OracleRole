@@ -59,9 +59,7 @@ table.insert(ROLE.convars, {
     type = ROLE_CONVAR_TYPE_BOOL
 })
 
-if CRVersion("1.3.1") then
-    RegisterRole(ROLE)
-end
+RegisterRole(ROLE)
 
 local function AddFile(fil)
     if SERVER then include(fil) end

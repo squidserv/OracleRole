@@ -12,7 +12,7 @@ Be careful, you will be vulnerable during your visions, however.
 
 ## Warning
 
-This role only works on Custom Roles version 1.3.1 or newer
+Some of the visions only work on Custom Roles 1.3.1
 
 ## Convars
 
