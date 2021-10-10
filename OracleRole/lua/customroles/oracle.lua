@@ -63,13 +63,12 @@ RegisterRole(ROLE)
 
 if SERVER then
     AddCSLuaFile()
+    util.AddNetworkString("OracleVision")
 end
 
 local function AddFile(fil)
     if SERVER then include(fil) end
 end
-
-util.AddNetworkString("OracleVision")
 
 Oracle = {}
 Oracle.Visions = {}
@@ -214,10 +213,12 @@ if SERVER then
     end)
 
     timer.Create("OracleVisionGap", GetConVar("ttt_oracle_vision_gap"):GetInt(), 0, function()
-        if player.IsRoleLiving(ROLE_ORACLE) then
-            Oracle:TriggerRandomVision(ply)
-        else
-            ply:SetNWBool("OracleActive", false)
+        if IsPlayer(ply) then
+            if player.IsRoleLiving(ROLE_ORACLE) then
+                Oracle:TriggerRandomVision(ply)
+            else
+                ply:SetNWBool("OracleActive", false)
+            end
         end
     end)
 
