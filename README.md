@@ -54,7 +54,7 @@ Wallhacks while blind
 
 ## Role
 
-The specific role of one of the non-innocents
+The specific role of one of players
 
 ## Team
 
@@ -64,6 +64,11 @@ If there is a member of a team alive
 
 How many players are left
 
+# Reveal
+
+One of 4 players is bad
+
 ## Special Thanks:
 - [Noxx](https://steamcommunity.com/id/noxxflame) and [Malivil](https://steamcommunity.com/id/malivil) for all their work on Custom Roles for TTT
 - LewisKane on the Yogscast subreddit for the idea
+- [Ianthina](https://steamcommunity.com/id/2ahlamfatin) for the idea for Reveal
