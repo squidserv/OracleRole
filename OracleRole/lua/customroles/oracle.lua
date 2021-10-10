@@ -61,6 +61,10 @@ table.insert(ROLE.convars, {
 
 RegisterRole(ROLE)
 
+if SERVER then
+    AddCSLuaFile()
+end
+
 local function AddFile(fil)
     if SERVER then include(fil) end
 end
@@ -71,11 +75,6 @@ Oracle = {}
 Oracle.Visions = {}
 local oracle_meta = {}
 oracle_meta.__index = oracle_meta
-
-local files, _ = file.Find("oraclerole/visions/*.lua", "LUA")
-for _, fil in ipairs(files) do
-    AddFile("oraclerole/visions/" .. fil)
-end
 
 local function DisplayVision(ply, message)
     net.Start("OracleVision")
@@ -203,7 +202,10 @@ function oracle_meta:RenameWeps(name)
 end
 
 if SERVER then
-    AddCSLuaFile()
+    local files, _ = file.Find("oraclerole/visions/*.lua", "LUA")
+    for _, fil in ipairs(files) do
+        AddFile("oraclerole/visions/" .. fil)
+    end
 
     local ply
 
