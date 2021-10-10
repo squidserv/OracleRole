@@ -38,7 +38,7 @@ TODO: All of them
 
 ## Weapon
 
-The weapon a bad player is holding
+Informs the player what weapon one of the opposing players is holding.
 
 ## Distance
 
