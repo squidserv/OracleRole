@@ -122,7 +122,7 @@ local function GetRandomVision(visions)
 
     local count = table.Count(visions)
     local idx = math.random(count)
-    local key = visions[idx]
+    local key = table.GetKeys(visions)[idx]
 
     return visions[key]
 end
