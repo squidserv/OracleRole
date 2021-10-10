@@ -174,31 +174,31 @@ end
 -- Rename stock weapons so they are readable
 function oracle_meta:RenameWeps(name)
     if name == "sipistol_name" then
-        return "Silenced Pistol"
+        return "a Silenced Pistol"
     elseif name == "knife_name" then
-        return "Knife"
+        return "a Knife"
     elseif name == "newton_name" then
-        return "Newton Launcher"
+        return "a Newton Launcher"
     elseif name == "tele_name" then
-        return "Teleporter"
+        return "a Teleporter"
     elseif name == "hstation_name" then
-        return "Health Station"
+        return "a Health Station"
     elseif name == "flare_name" then
-        return "Flare Gun"
+        return "a Flare Gun"
     elseif name == "decoy_name" then
-        return "Decoy"
+        return "a Decoy"
     elseif name == "radio_name" then
-        return "Radio"
+        return "a Radio"
     elseif name == "polter_name" then
-        return "Poltergeist"
+        return "a Poltergeist"
     elseif name == "vis_name" then
-        return "Visualizer"
+        return "a Visualizer"
     elseif name == "defuser_name" then
-        return "Defuser"
+        return "a Defuser"
     elseif name == "stungun_name" then
-        return "UMP Prototype"
+        return "an UMP Prototype"
     elseif name == "binoc_name" then
-        return "Binoculars"
+        return "a Binoculars"
     end
 
     return name
