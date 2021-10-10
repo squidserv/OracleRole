@@ -19,12 +19,12 @@ This role only works on Custom Roles version 1.3.1 or newer
 Add the following to your server.cfg (for dedicated servers) or listenserver.cfg (for peer-to-peer servers):
 
 ```cpp
-ttt_cultist_enabled             0                   // Used to enable or disable the role
-ttt_cultist_spawn_weight        1                   // The weight assigned for spawning the role
-ttt_cultist_min_players         0                   // The minimum number of player required to spawn the role
-ttt_cultist_starting_health     100                 // The amount of health the role starts each round with
-ttt_cultist_max_health          100                 // The maximum health of the role
-ttt_cultist_starting_credits    1                   // The player's starting credits
+ttt_oracle_enabled              0                   // Used to enable or disable the role
+ttt_oracle_spawn_weight         1                   // The weight assigned for spawning the role
+ttt_oracle_min_players          0                   // The minimum number of player required to spawn the role
+ttt_oracle_starting_health      100                 // The amount of health the role starts each round with
+ttt_oracle_max_health           100                 // The maximum health of the role
+ttt_oracle_starting_credits     1                   // The player's starting credits
 ttt_oracle_blind                1                   // If the oracle is blinded during the vision
 ttt_oracle_vision_time          10                  // How long the vision will be on the screen
 ttt_oracle_vision_gap           30                  // How long between visions
