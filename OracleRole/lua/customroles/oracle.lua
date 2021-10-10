@@ -65,7 +65,6 @@ end
 
 local function AddFile(fil)
     if SERVER then include(fil) end
-    if CLIENT then include(fil) end
 end
 
 util.AddNetworkString("OracleVision")
@@ -111,6 +110,11 @@ function Oracle:register(tbl)
     Oracle.Visions[id] = tbl
 
     CreateConVar("ttt_oracle_"..id, 1, {FCVAR_ARCHIVE, FCVAR_NOTIFY})
+
+    table.insert(ROLE.convars, {
+        cvar = "ttt_oracle_"..id,
+        type = ROLE_CONVAR_TYPE_BOOL,
+    })
 end
 
 local function GetRandomVision(visions)
