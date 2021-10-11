@@ -12,7 +12,7 @@ function VISION:GetVision()
 
     local distance = "0"
     if p ~= nil then
-        ply = player.GetLivingRole(ROLE_ORACLE)
+        local ply = player.GetLivingRole(ROLE_ORACLE)
         if m then
             distance = math.ceil((ply:GetPos():Distance(p:GetPos())) * 0.01905) .. "m"
         else
@@ -29,7 +29,7 @@ function VISION:GetVision()
 end
 
 function VISION:Condition()
-    t, inno, i, m, j = player.AreTeamsLiving()
+    local t, inno, i, m, j = player.AreTeamsLiving()
     return t or i or m or j
 end
 

@@ -17,7 +17,7 @@ function VISION:GetVision()
 end
 
 function VISION:Condition()
-    t, inno, i, m, j = player.AreTeamsLiving()
+    local t, inno, i, m, j = player.AreTeamsLiving()
     return t or i or m or j
 end
 

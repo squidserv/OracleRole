@@ -175,8 +175,7 @@ function oracle_meta:GetRandomEnemy()
     table.Shuffle(plys)
 
     local count = table.Count(plys)
-    local idx = math.random(count)
-    local key = table.GetKeys(plys)[idx]
+    local key = math.random(count)
 
     return plys[key]
 end
