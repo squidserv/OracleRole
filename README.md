@@ -52,7 +52,7 @@ ttt_oracle_distance_unit        0                    // The distance reported in
 
 ## Body
 
-A dead body that has not been investigated
+Reports to the player that there is a dead body that hasn't been investigated, as well as who the dead body is.
 
 ## Outline
 
