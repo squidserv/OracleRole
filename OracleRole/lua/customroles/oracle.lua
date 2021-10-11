@@ -161,11 +161,7 @@ function oracle_meta:Condition()
 end
 
 function oracle_meta:Enabled()
-    if GetConVar("ttt_oracle_"..self.id):GetBool() then
-        return true
-    else
-        return false
-    end
+    return GetConVar("ttt_oracle_"..self.id):GetBool()
 end
 
 -- Rename stock weapons so they are readable
