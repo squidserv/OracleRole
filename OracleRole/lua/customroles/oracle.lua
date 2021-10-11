@@ -164,6 +164,23 @@ function oracle_meta:Enabled()
     return GetConVar("ttt_oracle_"..self.id):GetBool()
 end
 
+function oracle_meta:GetRandomEnemy()
+    local plys = { }
+    for _, ply in ipairs(player.GetAll()) do
+        if IsPlayer(ply) and (ply:IsActiveTraitorTeam() or ply:IsActiveMonsterTeam() or ply:IsActiveIndependentTeam()
+                or ply:IsActiveJesterTeam()) then
+            table.insert(plys, ply)
+        end
+    end
+    table.Shuffle(plys)
+
+    local count = table.Count(plys)
+    local idx = math.random(count)
+    local key = table.GetKeys(plys)[idx]
+
+    return plys[key]
+end
+
 -- Rename stock weapons so they are readable
 function oracle_meta:RenameWeps(name)
     local weps = {}
