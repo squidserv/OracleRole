@@ -64,6 +64,7 @@ RegisterRole(ROLE)
 if SERVER then
     AddCSLuaFile()
     util.AddNetworkString("OracleVision")
+    include("oraclerole/weapons.lua")
 end
 
 local function AddFile(fil)
@@ -169,32 +170,13 @@ end
 
 -- Rename stock weapons so they are readable
 function oracle_meta:RenameWeps(name)
-    if name == "sipistol_name" then
-        return "a Silenced Pistol"
-    elseif name == "knife_name" then
-        return "a Knife"
-    elseif name == "newton_name" then
-        return "a Newton Launcher"
-    elseif name == "tele_name" then
-        return "a Teleporter"
-    elseif name == "hstation_name" then
-        return "a Health Station"
-    elseif name == "flare_name" then
-        return "a Flare Gun"
-    elseif name == "decoy_name" then
-        return "a Decoy"
-    elseif name == "radio_name" then
-        return "a Radio"
-    elseif name == "polter_name" then
-        return "a Poltergeist"
-    elseif name == "vis_name" then
-        return "a Visualizer"
-    elseif name == "defuser_name" then
-        return "a Defuser"
-    elseif name == "stungun_name" then
-        return "an UMP Prototype"
-    elseif name == "binoc_name" then
-        return "a Binoculars"
+    local weps = {}
+    weps = ConvertOracleWeapons()
+
+    for _, wep in ipairs(weps) do
+        if wep.class_name == name then
+            return wep.sanitized_name
+        end
     end
 
     return name
@@ -210,22 +192,24 @@ if SERVER then
 
     hook.Add("TTTBeginRound", "OracleRoundStart", function()
         ply = player.GetLivingRole(ROLE_ORACLE)
-    end)
 
-    timer.Create("OracleVisionGap", GetConVar("ttt_oracle_vision_gap"):GetInt(), 0, function()
-        if IsPlayer(ply) then
-            if player.IsRoleLiving(ROLE_ORACLE) then
-                Oracle:TriggerRandomVision(ply)
-            else
-                ply:SetNWBool("OracleActive", false)
+        timer.Create("OracleVisionGap", GetConVar("ttt_oracle_vision_gap"):GetInt(), 0, function()
+            if IsPlayer(ply) then
+                if player.IsRoleLiving(ROLE_ORACLE) then
+                    Oracle:TriggerRandomVision(ply)
+                else
+                    ply:SetNWBool("OracleActive", false)
+                end
             end
-        end
+        end)
     end)
 
     hook.Add("TTTEndRound", "OracleEndRound", function()
         timer.Remove("OracleVisionGap")
         timer.Remove("OracleVision")
-        ply:SetNWBool("OracleActive", false)
+        if IsPlayer(ply) then
+            ply:SetNWBool("OracleActive", false)
+        end
     end)
 end
 

@@ -8,14 +8,23 @@ function VISION:GetVision()
     for _, ply in ipairs(player.GetAll()) do
         if IsPlayer(ply) and (ply:IsActiveTraitorTeam() or ply:IsActiveMonsterTeam() or ply:IsActiveIndependentTeam()
                 or ply:IsActiveJesterTeam()) then
-            table.Add(plys, ply)
+            table.insert(plys, ply)
         end
     end
     table.Shuffle(plys)
-    local p = next(plys)
-    local weapon = ""
+
+    local count = table.Count(plys)
+    local idx = math.random(count)
+    local key = table.GetKeys(plys)[idx]
+
+    local p = plys[key]
+
+    local weapon = "Nothing"
     if p ~= nil then
-        weapon = p:GetActiveWeapon():GetClass()
+        local wep = p:GetActiveWeapon()
+        if wep ~= nil then
+            weapon = p:GetActiveWeapon():GetClass()
+        end
     end
     return "An enemy player is currently holding " .. self:RenameWeps(weapon)
 end
