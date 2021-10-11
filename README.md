@@ -42,7 +42,13 @@ Informs the player what weapon one of the opposing players is holding.
 
 ## Distance
 
-How far away a random enemy is
+How far away a random player on a different team is from the oracle is.
+
+There is one additional Convar for this vistion:
+
+```cpp
+ttt_oracle_distance_unit        0                    // The distance reported in ft (0) or m (1)
+```
 
 ## Body
 
