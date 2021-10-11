@@ -7,7 +7,7 @@ function VISION:GetVision()
     local plys = {}
 
     for _, ply in ipairs(player.GetAll()) do
-        if not ply:Alive() and ply:GetNWBool("body_found", false) then
+        if not ply:Alive() and not ply:GetNWBool("body_found", false) then
             table.insert(plys, ply)
         end
     end
@@ -23,7 +23,7 @@ end
 
 function VISION:Condition()
     for _, ply in ipairs(player.GetAll()) do
-        if not ply:Alive() and ply:GetNWBool("body_found", false) then
+        if not ply:Alive() and not ply:GetNWBool("body_found", false) then
             return true
         end
     end
