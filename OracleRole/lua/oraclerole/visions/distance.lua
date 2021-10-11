@@ -14,9 +14,9 @@ function VISION:GetVision()
     if p ~= nil then
         ply = player.GetLivingRole(ROLE_ORACLE)
         if m then
-            distance = math.ceil((ply:GetPos():Distance(tgt.pos)) * 0.01905) .. "m"
+            distance = math.ceil((ply:GetPos():Distance(p:GetPos())) * 0.01905) .. "m"
         else
-            distance = math.ceil((ply:GetPos():Distance(tgt.pos)) * 0.0625) .. "ft"
+            distance = math.ceil((ply:GetPos():Distance(p:GetPos())) * 0.0625) .. "ft"
         end
     else
         if m then
