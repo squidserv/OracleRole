@@ -19,27 +19,36 @@ function VISION:GetVision()
         mode = math.random(1,2)
     end
 
-    for _, ply in ipairs(player.GetAll()) do
+    for _, ply in ipairs(table.Shuffle(player.GetAll())) do
         if i >= max and bad then break end
-        if not oracle:IsSameTeam(ply) then
-            if not bad or mode == 2 then
+        if ply ~= oracle then
+            if not oracle:IsSameTeam(ply) then
+                if not bad or mode == 2 then
+                    table.insert(plys, ply)
+                end
+                bad = true
+            elseif i < max then
                 table.insert(plys, ply)
             end
-            bad = true
-        elseif i > max then
-            table.insert(plys, ply)
+            i = i + 1
         end
-        i = i + 1
     end
 
-    local strings = {"Only one of ", "At least one of "}
-    local s = strings[mode]
+    local str1 = {"Only one of ", "At least one of "}
+    local str2 = {"is ", "are "}
+    local s1 = str1[mode]
+    local s2 = str2[mode]
 
-    for _, p in ipairs(plys) do
-        s = s .. p:Nick() .. ", "
+    for i, p in ipairs(plys) do
+        s1 = s1 .. p:Nick()
+        if i < table.getn(plys) then
+            s1 = s1 .. ", "
+        else
+            s1 = s1 .. " "
+        end
     end
 
-    return s .. "is bad."
+    return s1 .. s2 .. "on a different team."
 end
 
 function VISION:Condition()
