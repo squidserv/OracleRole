@@ -72,7 +72,14 @@ How many players are left
 
 # Reveal
 
-One of 4 players is bad
+One of a certain number of players are on a different team. 
+
+There are two additional Convars for this vistion:
+
+```cpp
+ttt_oracle_reveal_players       4                    // The max number of players selected that could be bad.
+ttt_oracle_reveal_mode          3                    // 1 = One of, 2 = At least one of, 3 = Either
+```
 
 ## Special Thanks:
 - [Noxx](https://steamcommunity.com/id/noxxflame) and [Malivil](https://steamcommunity.com/id/malivil) for all their work on Custom Roles for TTT
