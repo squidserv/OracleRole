@@ -67,8 +67,13 @@ if SERVER then
     include("oraclerole/weapons.lua")
 end
 
-local function AddFile(fil)
+local function AddServer(fil)
     if SERVER then include(fil) end
+end
+
+local function AddClient(fil)
+    if SERVER then AddCSLuaFile(fil) end
+    if CLIENT then include(fil) end
 end
 
 Oracle = {}
@@ -94,6 +99,9 @@ local function TriggerVision(ply,vision)
     end
 
     timer.Create("OracleVision",visionTime,1,function()
+        if message == "" then
+            vision:EndVision()
+        end
         ply:SetNWBool("OracleActive", false)
     end)
 end
@@ -156,6 +164,8 @@ end
 
 function oracle_meta:GetVision() end
 
+function oracle_meta:EndVision() end
+
 function oracle_meta:Condition()
     return true
 end
@@ -194,12 +204,17 @@ function oracle_meta:RenameWeps(name)
     return name
 end
 
-if SERVER then
-    local files, _ = file.Find("oraclerole/visions/*.lua", "LUA")
-    for _, fil in ipairs(files) do
-        AddFile("oraclerole/visions/" .. fil)
-    end
+local files, _ = file.Find("oraclerole/visions/*.lua", "LUA")
+for _, fil in ipairs(files) do
+    AddServer("oraclerole/visions/" .. fil)
+end
 
+local clientfiles, _ = file.Find("oraclerole/visions/cl_visions/*.lua", "LUA")
+for _, fil in ipairs(clientfiles) do
+    AddClient("oraclerole/visions/cl_visions/" .. fil)
+end
+
+if SERVER then
     local ply
 
     hook.Add("TTTBeginRound", "OracleRoundStart", function()
