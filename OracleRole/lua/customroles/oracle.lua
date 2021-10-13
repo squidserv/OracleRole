@@ -94,6 +94,10 @@ local function TriggerVision(ply,vision)
     ply:SetNWBool("OracleActive", true)
     DisplayVision(ply, message)
 
+    if GetConVar("ttt_oracle_blind"):GetBool() then
+        ply:ScreenFade(SCREENFADE.STAYOUT, Color(0,0,0,255),0, 0)
+    end
+
     if GetConVar("ttt_oracle_chatbox"):GetBool() then
         ply:PrintMessage(HUD_PRINTTALK, message)
     end
@@ -102,6 +106,7 @@ local function TriggerVision(ply,vision)
         if message == "" then
             vision:EndVision()
         end
+        ply:ScreenFade(SCREENFADE.PURGE, Color(0,0,0,255),0, 0)
         ply:SetNWBool("OracleActive", false)
     end)
 end
@@ -256,13 +261,9 @@ if CLIENT then
         if not ply:IsRoleActive() then return end
         if msg == nil then return end
 
-        if GetGlobalBool("ttt_oracle_blind") then
-            surface.SetDrawColor(0, 0, 0, 255)
-            surface.DrawRect(0, 0, surface.ScreenWidth(), surface.ScreenHeight())
-        end
-
         local panel = vgui.Create("DNotify")
-        panel:SetLife(GetGlobalInt("ttt_oracle_vision_time"))
+        --panel:SetLife(GetGlobalInt("ttt_oracle_vision_time"))
+        panel:SetLife(1)
 
         surface.CreateFont("OracleVisionMsg", {
             font = "Roboto",
