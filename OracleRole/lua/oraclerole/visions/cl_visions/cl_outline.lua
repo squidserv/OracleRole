@@ -1,5 +1,4 @@
 net.Receive("halovisiontrigger", function()
-    print("draw")
     hook.Add("PreDrawHalos", "VisionHalos", function()
         local alivePlys = {}
         for k, v in ipairs(player.GetAll()) do
@@ -13,6 +12,5 @@ net.Receive("halovisiontrigger", function()
 end)
 
 net.Receive("halovisionend", function()
-    print("undraw")
     hook.Remove("PreDrawHalos", "VisionHalos")
 end)

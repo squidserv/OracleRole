@@ -6,17 +6,18 @@ VISION.id = "outline"
 util.AddNetworkString("halovisiontrigger")
 util.AddNetworkString("halovisionend")
 
+local ply
+
 function VISION:GetVision()
-    print("start")
+    ply = player.GetLivingRole(ROLE_ORACLE)
     net.Start("halovisiontrigger")
-    net.Broadcast()
+    net.Send(ply)
     return ""
 end
 
 function VISION:EndVision()
-    print("end")
     net.Start("halovisionend")
-    net.Broadcast()
+    net.Send(ply)
 end
 
 Oracle:register(VISION)
