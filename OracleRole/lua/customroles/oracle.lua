@@ -37,7 +37,6 @@ if SERVER then
     CreateConVar("ttt_oracle_chatbox", 0, FCVAR_NONE, "If the oracle should get the message in their chat box too")
 
     hook.Add("TTTSyncGlobals", "OracleGlobals", function()
-        SetGlobalInt("ttt_oracle_vision_time", GetConVar("ttt_oracle_vision_time"):GetInt())
         SetGlobalBool("ttt_oracle_blind", GetConVar("ttt_oracle_blind"):GetBool())
     end)
 end
@@ -262,7 +261,6 @@ if CLIENT then
         if msg == nil then return end
 
         local panel = vgui.Create("DNotify")
-        --panel:SetLife(GetGlobalInt("ttt_oracle_vision_time"))
         panel:SetLife(1)
 
         surface.CreateFont("OracleVisionMsg", {
