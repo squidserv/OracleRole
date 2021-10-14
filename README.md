@@ -12,7 +12,7 @@ Be careful, you will be vulnerable during your visions, however.
 
 ## Warning
 
-Some of the visions only work on Custom Roles 1.3.1
+**Alive** only works on Custom Roles 1.3.1
 
 ## Convars
 
@@ -33,8 +33,6 @@ ttt_oracle_vision               1                   // Whether a vision is enabl
 ```
 
 # Visions
-
-TODO: All of them
 
 ## Weapon
 
@@ -80,7 +78,13 @@ ttt_oracle_team_enemy_only      1                    // Shows only enemy teams t
 
 ## Alive
 
-How many players are left
+Reveals to the player how many people are left alive.
+
+There is one additional Convar for this vision:
+
+```cpp
+ttt_oracle_alive_enemy_only     0                    // Counts only enemy players
+```
 
 # Reveal
 
