@@ -83,7 +83,7 @@ Reveals to the player how many people are left alive.
 There is one additional Convar for this vision:
 
 ```cpp
-ttt_oracle_alive_mode           0                    // Should only enemies be included in the vision? 1 = yes, 2 = no, 3 = Either
+ttt_oracle_alive_mode           3                    // Should only enemies be included in the vision? 1 = yes, 2 = no, 3 = Either
 ```
 
 # Reveal
