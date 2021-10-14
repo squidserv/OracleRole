@@ -9,7 +9,7 @@ end
 
 function VISION:GetVision()
 
-    local mode = GetConVar("ttt_oracle_alive_mode"):GetInt()
+    local mode = GetConVar("ttt_oracle_role_mode"):GetInt()
     if mode > 2 or mode < 1 then
         mode = math.random(1,2)
     end
