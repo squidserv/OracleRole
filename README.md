@@ -56,7 +56,7 @@ Reports to the player that there is a dead body that hasn't been investigated, a
 
 ## Outline
 
-Wallhacks while blind
+The player will be able to see the outline of other players while they are blind.
 
 ## Role
 
