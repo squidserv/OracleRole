@@ -32,7 +32,8 @@ function VISION:GetVision()
 end
 
 function VISION:Condition()
-    return CRVersion("1.3.1")
+    local t, inno, i, m, j = player.AreTeamsLiving()
+    return t or i or m or j
 end
 
 Oracle:register(VISION)
