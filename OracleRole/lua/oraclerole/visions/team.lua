@@ -10,10 +10,10 @@ end
 function VISION:GetVision()
 
     local p
-    local team = "detective"
+    local team = ROLE_TEAM_DETECTIVE
     if not GetConVar("ttt_oracle_team_noinno"):GetBool() then
         p = self:GetRandomEnemy()
-        team = GetRoleTeamName(p:GetRoleTeam())
+        team = p:GetRoleTeam()
     else
         local teams = {player.AreTeamsLiving()}
         local t = math.random(1,5)
@@ -21,19 +21,19 @@ function VISION:GetVision()
             t = math.random(1,5)
         end
         if t == 1 then
-            team = GetRoleTeamName(ROLE_TEAM_TRAITOR)
+            team = ROLE_TEAM_TRAITOR
         elseif t == 2 then
-            team = GetRoleTeamName(ROLE_TEAM_INNOCENT)
+            team = ROLE_TEAM_INNOCENT
         elseif t == 3 then
-            team = GetRoleTeamName(ROLE_TEAM_INDEPENDENT)
+            team = ROLE_TEAM_INDEPENDENT
         elseif t == 4 then
-            team = GetRoleTeamName(ROLE_TEAM_MONSTER)
+            team = ROLE_TEAM_MONSTER
         else
-            team = GetRoleTeamName(ROLE_TEAM_JESTER)
+            team = ROLE_TEAM_JESTER
         end
     end
 
-    return "There is a member of the " .. team .. " team alive."
+    return "There is a member of the " .. self:GetRoleTeamName(team) .. " team alive."
 end
 
 function VISION:Condition()

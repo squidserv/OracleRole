@@ -208,6 +208,21 @@ function oracle_meta:RenameWeps(name)
     return name
 end
 
+function oracle_meta:GetRoleTeamName(team)
+    if team == ROLE_TEAM_TRAITOR then
+        return "traitor"
+    elseif team == ROLE_TEAM_MONSTER then
+        return "monster"
+    elseif team == ROLE_TEAM_JESTER then
+        return "jester"
+    elseif team == ROLE_TEAM_INDEPENDENT then
+        return "independent"
+    elseif team == ROLE_TEAM_DETECTIVE then
+        return "detective"
+    end
+    return "innocent"
+end
+
 local files, _ = file.Find("oraclerole/visions/*.lua", "LUA")
 for _, fil in ipairs(files) do
     AddServer("oraclerole/visions/" .. fil)
