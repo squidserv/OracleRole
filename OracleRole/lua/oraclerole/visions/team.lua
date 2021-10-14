@@ -4,7 +4,7 @@ VISION.Name = "Is that team alive?"
 VISION.id = "team"
 
 if SERVER then
-    CreateConVar("ttt_oracle_team_enemy_only", 1, FCVAR_NONE, "Should innocents be shown in the vision?")
+    CreateConVar("ttt_oracle_team_enemy_only", 1, FCVAR_NONE, "Should only enemies be included in the vision?")
 end
 
 function VISION:GetVision()
