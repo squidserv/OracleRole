@@ -97,6 +97,16 @@ ttt_oracle_reveal_players       4                    // The max number of player
 ttt_oracle_reveal_mode          3                    // 1 = One of, 2 = At least one of, 3 = Either
 ```
 
+# Credits
+
+Reveals how many credits there still are to be spent by the player's enemies
+
+There is one additional Convar for this vision:
+
+```cpp
+ttt_oracle_credits_mode         3                    // Should only one player be included in the vision? 1 = yes, 2 = no, 3 = Either
+```
+
 ## Special Thanks:
 - [Noxx](https://steamcommunity.com/id/noxxflame) and [Malivil](https://steamcommunity.com/id/malivil) for all their work on Custom Roles for TTT
 - LewisKane on the Yogscast subreddit for the idea
