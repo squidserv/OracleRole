@@ -111,3 +111,4 @@ ttt_oracle_credits_mode         3                    // Should only one player b
 - [Noxx](https://steamcommunity.com/id/noxxflame) and [Malivil](https://steamcommunity.com/id/malivil) for all their work on Custom Roles for TTT
 - LewisKane on the Yogscast subreddit for the idea
 - [Ianthina](https://steamcommunity.com/id/2ahlamfatin) for the idea for Reveal
+- Hell's Redeemer on the Custom Roles discord for the idea for Credits
