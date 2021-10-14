@@ -60,7 +60,13 @@ The player will be able to see the outline of other players while they are blind
 
 ## Role
 
-The specific role of one of players
+The player can see the specific role of another player.
+
+There is one additional Convar for this vision:
+
+```cpp
+ttt_oracle_role_enemy_only      1                    // Shows only enemy roles to the player
+```
 
 ## Team
 
@@ -74,7 +80,7 @@ How many players are left
 
 One of a certain number of players are on a different team. 
 
-There are two additional Convars for this vistion:
+There are two additional Convars for this vision:
 
 ```cpp
 ttt_oracle_reveal_players       4                    // The max number of players selected that could be bad.
