@@ -63,7 +63,7 @@ The player can see the specific role of another player.
 There is one additional Convar for this vision:
 
 ```cpp
-ttt_oracle_role_enemy_only      1                    // Shows only enemy roles to the player
+ttt_oracle_role_mode            1                    // Should only enemies be included in the vision? 1 = yes, 2 = no, 3 = Either
 ```
 
 ## Team
@@ -73,7 +73,7 @@ Reports to the player that there is a member of a certain team left alive.
 There is one additional Convar for this vision:
 
 ```cpp
-ttt_oracle_team_enemy_only      1                    // Shows only enemy teams to the player
+ttt_oracle_team_mode            1                    // Should only enemies be included in the vision? 1 = yes, 2 = no, 3 = Either
 ```
 
 ## Alive
@@ -83,7 +83,7 @@ Reveals to the player how many people are left alive.
 There is one additional Convar for this vision:
 
 ```cpp
-ttt_oracle_alive_enemy_only     0                    // Counts only enemy players
+ttt_oracle_alive_mode           0                    // Should only enemies be included in the vision? 1 = yes, 2 = no, 3 = Either
 ```
 
 # Reveal
