@@ -10,7 +10,7 @@ end
 function VISION:GetVision()
 
     local p
-    local team = "Detective"
+    local team = "detective"
     if not GetConVar("ttt_oracle_team_noinno"):GetBool() then
         p = self:GetRandomEnemy()
         team = GetRoleTeamName(p:GetRoleTeam())
@@ -33,7 +33,7 @@ function VISION:GetVision()
         end
     end
 
-    return "There is a " .. team .. " alive."
+    return "There is a member of the " .. team .. " team alive."
 end
 
 function VISION:Condition()
