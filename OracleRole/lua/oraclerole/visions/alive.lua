@@ -10,13 +10,13 @@ end
 function VISION:GetVision()
     local count = 0
     if GetConVar("ttt_oracle_alive_enemy_only"):GetBool() then
-        local teams = {player.TeamLivingCount}
+        local teams = {player.TeamLivingCount()}
         for i, t in ipairs(teams) do
             if i ~= 2 then
                 count = count + t
             end
         end
-        count = count .. " enemy "
+        count = count .. " enemy"
     else
         count = player.LivingCount()
     end
