@@ -3,8 +3,10 @@ local VISION = {}
 VISION.Name = "One of these players is bad."
 VISION.id = "reveal"
 
-CreateConVar("ttt_oracle_reveal_players", 4, FCVAR_NONE, "The max number of players selected that could be bad.")
-CreateConVar("ttt_oracle_reveal_mode", 3, FCVAR_NONE, "1 = One of, 2 = At least one of, 3 = Either")
+if SERVER then
+    CreateConVar("ttt_oracle_reveal_players", 4, FCVAR_NONE, "The max number of players selected that could be bad.")
+    CreateConVar("ttt_oracle_reveal_mode", 3, FCVAR_NONE, "1 = One of, 2 = At least one of, 3 = Either")
+end
 
 function VISION:GetVision()
 
