@@ -26,11 +26,11 @@ function VISION:GetVision()
         p = plys[key]
     end
 
-    local role = "Oracle"
+    local role = "an Oracle"
     if p ~= nil then
-        role = p:GetRole()
+        role = ROLE_STRINGS_EXT[p:GetRole()]
     end
-    return "There is a " .. role
+    return "There is " .. role
 end
 
 function VISION:Condition()
