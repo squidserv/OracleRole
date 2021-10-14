@@ -70,7 +70,13 @@ ttt_oracle_role_enemy_only      1                    // Shows only enemy roles t
 
 ## Team
 
-If there is a member of a team alive
+Reports to the player that there is a member of a certain team left alive.
+
+There is one additional Convar for this vision:
+
+```cpp
+ttt_oracle_team_enemy_only      1                    // Shows only enemy teams to the player
+```
 
 ## Alive
 

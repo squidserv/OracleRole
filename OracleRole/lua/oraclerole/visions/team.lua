@@ -4,14 +4,14 @@ VISION.Name = "Is that team alive?"
 VISION.id = "team"
 
 if SERVER then
-    CreateConVar("ttt_oracle_team_noinno", 0, FCVAR_NONE, "Should innocents be shown in the vision?")
+    CreateConVar("ttt_oracle_team_enemy_only", 1, FCVAR_NONE, "Should innocents be shown in the vision?")
 end
 
 function VISION:GetVision()
 
     local p
     local team = ROLE_TEAM_DETECTIVE
-    if not GetConVar("ttt_oracle_team_noinno"):GetBool() then
+    if GetConVar("ttt_oracle_team_enemy_only"):GetBool() then
         p = self:GetRandomEnemy()
         team = p:GetRoleTeam()
     else
